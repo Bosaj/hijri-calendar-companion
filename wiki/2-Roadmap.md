@@ -1,10 +1,21 @@
-# 2. Roadmap
+# Technical Roadmap & Milestones
 
-- v0.1 — Hijri date engine with method choice + manual day offset.
-- v0.2 — Home-screen and lock-screen widgets.
-- v0.3 — Hijri reminders (white days, Ramadan, Eid, custom).
-- v0.4 — Samsung Calendar overlay + Wear OS tile.
+The development of **Hijri Islamic Calendar Companion & Prayer Times** is organized into four strategic milestones:
 
-## Notes for contributors / LLM agents
-- Never hard-code one calculation method: Morocco follows local moon sighting, so the offset setting is a core feature.
-- Check the latest Samsung Calendar build first: if the Hijri layer is now available in Morocco, pivot to the widget only.
+## Milestone Breakdown
+
+### Milestone v0.1 — Foundation & Core Scaffolding
+* **Objective:** Astronomical Umm al-Qura and Moroccan Habous lunar calendar conversion algorithms.
+* **Deliverables:** Core architecture, basic pipeline, standard documentation, and CI integration.
+
+### Milestone v0.2 — Feature Expansion & Deep Pipelines
+* **Objective:** High-precision prayer times engine with Moroccan Ministry (Habous) angle configurations.
+* **Deliverables:** Multimodal ingestion, expanded domain models, and automated test suites.
+
+### Milestone v0.3 — Intelligence, Refinement & Safety
+* **Objective:** SVG Qibla compass with GPS geolocation and magnetic declination calculation.
+* **Deliverables:** Advanced evaluation logic, heuristic calibration, and performance profiling.
+
+### Milestone v0.4 — Production Readiness & Ecosystem Integration
+* **Objective:** iCal / Google Calendar export for Islamic historical events, fasting days, and Ramadan.
+* **Deliverables:** Client UI / CLI tooling, cloud deployment manifests, and partner integrations.
