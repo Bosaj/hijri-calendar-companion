@@ -1,17 +1,25 @@
-# 1. Architecture
+# Architecture & System Design
 
-1. Date engine: wrap `IslamicCalendar` with a per-user day offset, because Morocco and other countries start months by local moon sighting.
-2. Widgets: Jetpack Glance widgets (small, medium, lock-screen) that show both dates.
-3. Reminders: WorkManager jobs for white days, Ramadan, Eid and user events stored with a Hijri date.
-4. Calendar bridge: read-only `CalendarContract` overlay so Samsung Calendar events show their Hijri date.
+This document details the system design, components, and communication topology of **Hijri Islamic Calendar Companion & Prayer Times**.
 
-## Proposed stack
-- Kotlin + Jetpack Compose
-- Jetpack Glance (widgets)
-- WorkManager
-- android.icu IslamicCalendar
+```mermaid
+flowchart TD
+    Client["Client / User Interface"] --> Core["Core Processing Engine"]
+    Core --> Ingestion["Data Ingestion & Adapters"]
+    Core --> Persistence["Storage / Cache Layer"]
+    Core --> Verification["Validation & Safety Layer"]
+```
 
-## Open bases to fork
-- [xsoh/awesome-hijri](https://github.com/xsoh/awesome-hijri) — Curated list of Hijri libraries in every language.
-- [alhazmy13/HijriDatePicker](https://github.com/alhazmy13/HijriDatePicker) — Android Hijri date picker component.
-- [android.icu.util.IslamicCalendar](https://developer.android.com/reference/android/icu/util/IslamicCalendar) — Built-in Android API (API 24+) with civil, tabular and Umm al-Qura variants.
+## Core Subsystems
+
+### 1. Ingestion & Preprocessing
+Handles raw input data, validates schema compliance, normalizes inputs, and eliminates malformed requests.
+
+### 2. Processing & Business Logic
+Executes the primary business logic and domain processing pipelines efficiently and deterministically.
+
+### 3. Verification & Safety Guards
+Enforces safety rules, sanitizes data structures, and validates output integrity before presentation.
+
+### 4. Storage & State Management
+Maintains persistent state, caches hot queries, and guarantees data durability.
