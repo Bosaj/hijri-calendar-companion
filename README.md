@@ -3,7 +3,7 @@
 > A home-screen widget and reminders that put the Hijri date next to the Gregorian one on Android (Samsung first).
 
 **Status:** pre-alpha scaffold (no code yet). **Feasibility rating:** 4/10 — useful daily, but partly solved by built-in calendars in some regions.
-**Idea:** #01 in the owner's ideas backlog. **Author:** Oussama EL HADJI. Part of the Bosaj ideas portfolio (sibling repo: `dual_portfolio_hub`).
+**Idea:** #01 in the owner's ideas backlog. **Author:** Oussama Elhadji (`@Bosaj`) <oussousselhadji@gmail.com>.
 
 ---
 
@@ -59,6 +59,7 @@ This repo is a **scaffold**: README + standard files, no implementation yet. If 
 # nothing to run yet — this is a scaffold.
 ```
 
-## License
+## 📄 License
+**Proprietary & Commercial Software License** — All Rights Reserved © 2026 Oussama Elhadji (`@Bosaj`) <[oussousselhadji@gmail.com](mailto:oussousselhadji@gmail.com)>.
 
-[MIT](LICENSE) — © 2026 Oussama EL HADJI
+Unauthorized copying, distribution, resale, or reverse engineering is strictly prohibited. See [LICENSE](LICENSE) for full legal terms.
