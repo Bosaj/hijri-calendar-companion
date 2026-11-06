@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calendrier hégirien</string>
+    <string name="widget_name">Date hégirienne</string>
+    <string name="widget_description">La date hégirienne au-dessus de la date grégorienne, avec l\'occasion du jour.</string>
+
+    <string-array name="hijri_months">
+        <item>Moharram</item>
+        <item>Safar</item>
+        <item>Rabii al-Awal</item>
+        <item>Rabii al-Akhir</item>
+        <item>Joumada al-Oula</item>
+        <item>Joumada al-Akhira</item>
+        <item>Rajab</item>
+        <item>Chaabane</item>
+        <item>Ramadan</item>
+        <item>Chaoual</item>
+        <item>Dou al-Qiida</item>
+        <item>Dou al-Hijja</item>
+    </string-array>
+    <string name="hijri_date_format">%1$d %2$s %3$d H</string>
+
+    <string name="today">Aujourd\'hui</string>
+    <string name="previous">Précédent</string>
+    <string name="next">Suivant</string>
+    <string name="legend_white_days">Jours blancs (du 13 au 15)</string>
+    <string name="outside_tables">Les tables Umm al-Qura couvrent 1937 à 2077. En dehors, cette date vient du calendrier civil.</string>
+
+    <string name="upcoming">À venir</string>
+    <string name="upcoming_note">Les dates qui dépendent de la lune sont calculées. Vérifiez l\'annonce officielle de votre pays.</string>
+    <plurals name="in_days">
+        <item quantity="one">dans %d jour</item>
+        <item quantity="many">dans %d jours</item>
+        <item quantity="other">dans %d jours</item>
+    </plurals>
+
+    <string name="settings">Réglages</string>
+    <string name="method">Calcul</string>
+    <string name="method_umm_al_qura">Umm al-Qura</string>
+    <string name="method_civil">Civil</string>
+    <string name="offset">Décalage en jours</string>
+    <plurals name="offset_days">
+        <item quantity="one">%s jour</item>
+        <item quantity="many">%s jours</item>
+        <item quantity="other">%s jours</item>
+    </plurals>
+    <string name="offset_help">Le Maroc et beaucoup d\'autres pays commencent chaque mois quand la nouvelle lune est observée : aucun calcul ne connaît la date à l\'avance. Si la date du jour diffère de la date officielle, décalez-la d\'un jour.</string>
+
+    <string name="reminders">Rappels, la veille au soir</string>
+    <string name="remind_white_days">Jours blancs</string>
+    <string name="remind_monday_thursday">Jeûne du lundi et du jeudi</string>
+    <string name="remind_occasions">Ramadan, Aïd et autres occasions</string>
+    <string name="reminder_time">Heure du rappel</string>
+    <string name="notifications_off">Les notifications sont désactivées pour cette application : les rappels ne peuvent pas s\'afficher.</string>
+    <string name="allow_notifications">Autoriser les notifications</string>
+
+    <string name="channel_reminders">Rappels</string>
+    <string name="channel_reminders_description">La veille des jours blancs, des jours de jeûne et des occasions.</string>
+    <string name="reminder_title">Demain : %1$s</string>
+    <string name="reminder_text">%1$s.</string>
+    <string name="reminder_sighting">Date calculée : confirmez-la avec l\'annonce de l\'observation du croissant.</string>
+    <string name="list_separator">", "</string>
+
+    <string name="occasion_white_day">Jour blanc</string>
+    <string name="occasion_monday_thursday">Jeûne du lundi ou du jeudi</string>
+    <string name="occasion_new_year">Nouvel an de l\'Hégire</string>
+    <string name="occasion_ashura">Achoura</string>
+    <string name="occasion_mawlid">Aïd al-Mawlid</string>
+    <string name="occasion_ramadan">Premier jour du Ramadan</string>
+    <string name="occasion_eid_fitr">Aïd al-Fitr</string>
+    <string name="occasion_arafah">Jour d\'Arafat</string>
+    <string name="occasion_eid_adha">Aïd al-Adha</string>
+</resources>

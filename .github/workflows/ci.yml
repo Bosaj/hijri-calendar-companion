@@ -6,49 +6,60 @@ on:
   pull_request:
     branches: [ main, master ]
 
+permissions:
+  contents: read
+
 jobs:
   test:
-    name: Lint, Test & Validate
+    name: Build & Test Android App
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v5
+      # Refuses a tampered gradle-wrapper.jar before anything runs it.
+      - name: Validate Gradle Wrapper
+        uses: gradle/actions/wrapper-validation@v6
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v6
         with:
-          python-version: "3.11"
+          distribution: 'temurin'
+          java-version: '17'
 
-      - name: Install Dependencies
-        run: |
-          python -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          if [ -f pyproject.toml ]; then pip install .; fi
-          pip install flake8 pytest
+      - name: Repository Checks
+        run: python3 -m unittest discover -s tests -v
 
-      - name: Verify Documentation & Governance Standards
-        run: |
-          echo "Verifying repository governance standards..."
-          test -f README.md && echo "✓ README.md present"
-          test -f LICENSE && echo "✓ LICENSE present"
-          test -f CONTRIBUTING.md && echo "✓ CONTRIBUTING.md present"
-          test -f CONTRIBUTORS.md && echo "✓ CONTRIBUTORS.md present"
-          test -f SECURITY.md && echo "✓ SECURITY.md present"
-          test -f CHANGELOG.md && echo "✓ CHANGELOG.md present"
+      - name: Make Gradlew Executable
+        run: chmod +x ./gradlew
 
-      - name: Lint Python Code with Flake8
-        run: |
-          if ls *.py 1> /dev/null 2>&1 || [ -d src ]; then
-            flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics || true
-          else
-            echo "No root Python files to lint."
-          fi
+      # Each step fails the job on error: no "|| true".
+      - name: Run Unit Tests
+        run: ./gradlew testDebugUnitTest --no-daemon --stacktrace
 
-      - name: Run Pytest
-        run: |
-          if [ -d tests ] || ls test*.py 1> /dev/null 2>&1; then
-            pytest -v || true
-          else
-            echo "No pytest suite configured yet for foundation milestone."
-          fi
+      - name: Android Lint
+        run: ./gradlew lintDebug --no-daemon
+
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug --no-daemon
+
+      # Unsigned here (no keystore in CI); proves R8 and resource shrinking still build.
+      - name: Build Release APK
+        run: ./gradlew assembleRelease --no-daemon
+
+      - name: Upload Reports
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: reports
+          path: app/build/reports/
+          retention-days: 7
+
+      - name: Upload Debug APK
+        uses: actions/upload-artifact@v7
+        with:
+          name: hijri-companion-debug-apk
+          path: app/build/outputs/apk/debug/*.apk
+          retention-days: 14
