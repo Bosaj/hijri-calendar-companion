@@ -1,0 +1,8 @@
+Hijri Calendar Companion
+Copyright 2026 Oussama Elhadji
+
+app/src/main/java/ma/bosaj/hijri/engine/UmmAlQuraData.kt and app/src/test/resources/icu_vectors.json are
+derived from ICU (International Components for Unicode) data, through Node.js's Intl API.
+
+ICU is Copyright © 2016 and later Unicode, Inc. and others, and is distributed under the Unicode License v3:
+https://www.unicode.org/license.txt

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">رفيق التقويم الهجري</string>
+    <string name="widget_name">التاريخ الهجري</string>
+    <string name="widget_description">التاريخ الهجري فوق الميلادي، مع مناسبة اليوم.</string>
+
+    <string-array name="hijri_months">
+        <item>محرم</item>
+        <item>صفر</item>
+        <item>ربيع الأول</item>
+        <item>ربيع الآخر</item>
+        <item>جمادى الأولى</item>
+        <item>جمادى الآخرة</item>
+        <item>رجب</item>
+        <item>شعبان</item>
+        <item>رمضان</item>
+        <item>شوال</item>
+        <item>ذو القعدة</item>
+        <item>ذو الحجة</item>
+    </string-array>
+    <string name="hijri_date_format">%1$d %2$s %3$d هـ</string>
+
+    <string name="today">اليوم</string>
+    <string name="previous">السابق</string>
+    <string name="next">التالي</string>
+    <string name="legend_white_days">الأيام البيض (من 13 إلى 15)</string>
+    <string name="outside_tables">جداول أم القرى تغطي من 1937 إلى 2077. خارجها، يأتي هذا التاريخ من التقويم الحسابي.</string>
+
+    <string name="upcoming">المناسبات القادمة</string>
+    <string name="upcoming_note">التواريخ المرتبطة برؤية الهلال محسوبة. تحقق من الإعلان الرسمي في بلدك.</string>
+    <plurals name="in_days">
+        <item quantity="zero">اليوم</item>
+        <item quantity="one">بعد يوم واحد</item>
+        <item quantity="two">بعد يومين</item>
+        <item quantity="few">بعد %d أيام</item>
+        <item quantity="many">بعد %d يوما</item>
+        <item quantity="other">بعد %d يوم</item>
+    </plurals>
+
+    <string name="settings">الإعدادات</string>
+    <string name="method">طريقة الحساب</string>
+    <string name="method_umm_al_qura">أم القرى</string>
+    <string name="method_civil">الحسابي</string>
+    <string name="offset">تعديل بالأيام</string>
+    <plurals name="offset_days">
+        <item quantity="zero">%s يوم</item>
+        <item quantity="one">%s يوم</item>
+        <item quantity="two">%s يومان</item>
+        <item quantity="few">%s أيام</item>
+        <item quantity="many">%s يوما</item>
+        <item quantity="other">%s يوم</item>
+    </plurals>
+    <string name="offset_help">يبدأ المغرب ودول كثيرة كل شهر عند رؤية الهلال، فلا يعرف أي حساب التاريخ مسبقا. إن اختلف تاريخ اليوم عن التاريخ الرسمي، فعدله بيوم.</string>
+
+    <string name="reminders">التذكير، مساء اليوم السابق</string>
+    <string name="remind_white_days">الأيام البيض</string>
+    <string name="remind_monday_thursday">صيام الاثنين والخميس</string>
+    <string name="remind_occasions">رمضان والعيدان وباقي المناسبات</string>
+    <string name="reminder_time">وقت التذكير</string>
+    <string name="notifications_off">الإشعارات متوقفة لهذا التطبيق، فلا يمكن عرض التذكيرات.</string>
+    <string name="allow_notifications">السماح بالإشعارات</string>
+
+    <string name="channel_reminders">التذكيرات</string>
+    <string name="channel_reminders_description">مساء اليوم الذي يسبق الأيام البيض وأيام الصيام والمناسبات.</string>
+    <string name="reminder_title">غدا: %1$s</string>
+    <string name="reminder_text">%1$s.</string>
+    <string name="reminder_sighting">تاريخ محسوب: تأكد منه بإعلان رؤية الهلال.</string>
+    <string name="list_separator">"، "</string>
+
+    <string name="occasion_white_day">يوم من الأيام البيض</string>
+    <string name="occasion_monday_thursday">صيام الاثنين أو الخميس</string>
+    <string name="occasion_new_year">رأس السنة الهجرية</string>
+    <string name="occasion_ashura">عاشوراء</string>
+    <string name="occasion_mawlid">عيد المولد النبوي</string>
+    <string name="occasion_ramadan">أول أيام رمضان</string>
+    <string name="occasion_eid_fitr">عيد الفطر</string>
+    <string name="occasion_arafah">يوم عرفة</string>
+    <string name="occasion_eid_adha">عيد الأضحى</string>
+</resources>
